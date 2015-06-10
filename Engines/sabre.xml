@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+  File:     sabre.xml
+  Author:   Dave Culp
+
+  Inputs:
+    name:           Napier Sabre
+    type:           piston
+    power:          2200.0 hp
+    augmented?      no
+    injected?       no
+    
+    References:
+    http://en.wikipedia.org/wiki/Napier_Sabre
+    Supercharger data is fantasy.
+    
+-->
+
+<piston_engine name="sabre">
+  <maxmp unit="INHG">        56.0 </maxmp>	
+  <displacement unit="IN3">2240.0  </displacement>
+  <maxhp>                  2200.0  </maxhp>
+  <bore unit="IN"> 5.00 </bore>
+  <stroke unit="IN"> 4.75 </stroke>
+  <cylinders> 24 </cylinders>
+  <compression-ratio> 7.00 </compression-ratio>  
+  <bsfc>                      0.4  </bsfc>
+  <volumetric-efficiency>     0.775  </volumetric-efficiency>  
+  <cycles>                    4.0  </cycles>
+  <idlerpm>                 550.0  </idlerpm>
+  <maxrpm>                 3700.0  </maxrpm>
+  <maxthrottle>               1.0  </maxthrottle>
+  <minthrottle>               0.1  </minthrottle>
+  <sparkfaildrop>             0.2  </sparkfaildrop>
+  <numboostspeeds> 2   </numboostspeeds>
+  <boostoverride>  0   </boostoverride>
+
+  <ratedboost1>    8.15</ratedboost1> <!-- 46.5 inHg -->
+  <ratedpower1> 1900   </ratedpower1>
+  <ratedrpm1>   2600   </ratedrpm1>
+  <ratedaltitude1> 4900 </ratedaltitude1>
+
+  <ratedboost2>    5.00</ratedboost2> 
+  <ratedpower2> 1600   </ratedpower2>
+  <ratedrpm2>   2600   </ratedrpm2>
+  <ratedaltitude2> 12000 </ratedaltitude2>
+
+  <takeoffboost> 10.85    </takeoffboost>   <!-- 52.0 inHg -->
+</piston_engine> 
