@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+ 
+<PropertyList>
+
+ <fx>
+
+
+  <engine>
+   <name>engstart</name>
+   <path>Aircraft/DavePack/Sounds/Censtart.wav</path>
+   <property>engines/engine/cranking</property>
+   <volume>
+    <offset>-0.4</offset>
+   </volume>
+  </engine>
+
+  <engine>
+   <name>engine-low-rpm</name>
+   <mode>looped</mode>
+   <path>Aircraft/DavePack/Sounds/hc1a.wav</path>
+   <condition>
+    <property>engines/engine[0]/running</property>
+    <less-than>
+      <property>engines/engine[0]/rpm</property>
+      <value>2600</value>
+    </less-than>
+   </condition>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>-0.0005</factor>
+    <min>0.2</min>
+    <max>1.0</max>
+    <offset>1.0</offset>
+   </volume>
+   <pitch>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.0001</factor>
+    <min>0</min>
+    <max>1.0</max>
+   </pitch>
+  </engine>
+
+  <engine>
+   <name>engine-high-rpm</name>
+   <mode>looped</mode>
+   <path>Aircraft/DavePack/Sounds/radial.wav</path>
+   <condition>
+    <property>engines/engine[0]/running</property>
+    <greater-than>
+      <property>engines/engine[0]/rpm</property>
+      <value>450</value>
+    </greater-than>
+   </condition>
+   <volume>
+    <property>engines/engine[0]/rpm</property>
+    <factor>0.0005</factor>
+    <min>0.5</min>
+    <max>1.5</max>
+    <offset>0.0</offset>
+   </volume>
+   <pitch>
+    <property>engines/engine[0]/mp-osi</property>
+    <type>sqrt</type>
+    <factor>0.41</factor>
+    <offset>0.0</offset>
+   </pitch>
+  </engine>
+
+  <shutdown>
+   <name>shutdown</name>
+   <path>Aircraft/DavePack/Sounds/CentSdown_3.wav</path>
+   <condition>
+    <equals>
+      <property>controls/engines/engine[0]/magnetos</property>
+      <value>0</value>
+    </equals>
+    <greater-than>
+      <property>engines/engine/rpm</property>
+      <value>10</value>
+    </greater-than>
+   </condition>
+  </shutdown>
+
+
+ 
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <or>
+     <property>gear/gear[0]/wow</property>
+     <property>gear/gear[1]/wow</property>
+     <property>gear/gear[2]/wow</property>
+    </or>
+   </condition>
+   <volume>
+    <property>velocities/speed-down-fps</property>
+    <factor>0.5</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <property>velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <max>1.0</max>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>velocities/airspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>0.5</offset>
+    <max>1.0</max>
+   </pitch>
+  </squeal>
+
+  
+
+  <guns>
+   <name>gunfire</name>
+   <mode>looped</mode>
+   <condition>
+    <property>controls/armament/trigger</property>
+   </condition>
+   <path>Aircraft/DavePack/Sounds/20mm-gun.wav</path>
+  </guns>
+
+ 
+</fx>
+ 
+</PropertyList>

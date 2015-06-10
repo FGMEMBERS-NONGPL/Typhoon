@@ -9,7 +9,8 @@
  <sim>
 
   <description>Hawker Typhoon</description>
- 
+  <author>Dave Culp, StuartC</author>
+  <status>V0.2</status> 
   <flight-model>jsb</flight-model>
   <aero>JSBSim</aero>
 
@@ -282,5 +283,15 @@
   </jsbsim>
  </fdm>
 
+ 
+ <nasal>
+ 
+    <Tiffy>
+     <file>Aircraft/Typhoon/Nasal/light.nas</file>
+	  <file>Aircraft/Tuphoon/Nasal/liveries.nas</file>
+	  
+    </Tiffy>
+	
+ </nasal>
 
 </PropertyList>
